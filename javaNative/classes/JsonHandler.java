@@ -93,38 +93,6 @@ public class JsonHandler
         return listObj;
     }
 
-    private static String digestEncryptedStream(BufferedInputStream stream) throws Exception
-    {
-        BufferedReader
-                Reader = new BufferedReader(new InputStreamReader(stream, StandardCharsets.UTF_8));
-        StringBuilder
-                bldr = new StringBuilder();
-        String
-                ln ;
-        while ((ln =  Reader.readLine()) != null) bldr.append(ln);
-        return Encryption.kalenEncryption.decrypt(
-                URLDecoder.decode(
-                        bldr.toString(),
-                        "utf-8"
-                )
-        );
-    }
-
-    public static List<String[]> decryptedInputStream(BufferedInputStream stream)
-    {
-        List<String[]>
-                list = new ArrayList<>();
-        try
-        {
-            list = decode(digestEncryptedStream(stream));
-        }
-        catch (Exception e)
-        {
-            /*do nothing*/
-        }
-        return list;
-    }
-
     public static List<String[]> decode(BufferedInputStream stream)
     {
         List<String[]>
