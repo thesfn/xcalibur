@@ -285,14 +285,12 @@ public class Network
             private String
                     u;
             private boolean
-                    decrypt,
                     cancel = false;
 
-            public formUrlEncoded(String[] data, String url, boolean decryptedResponse, XADCallback callback)
+            public formUrlEncoded(String[] data, String url, XADCallback callback)
             {
                 u = url;
                 c = callback;
-                decrypt = decryptedResponse;
                 execute(data);
             }
 
@@ -339,7 +337,7 @@ public class Network
                         rCode = https.getResponseCode();
                         Log.d("ServerResponseCode","Server response code is "+rCode);
                         is = new BufferedInputStream(https.getInputStream());
-                        if(rCode == HttpsURLConnection.HTTP_OK) ls = decrypt ? decryptedInputStream(is) : readIt(is);
+                        if(rCode == HttpsURLConnection.HTTP_OK) ls = readIt(is);
                         https.disconnect();
                     }
                     else
@@ -363,7 +361,7 @@ public class Network
                         rCode = http.getResponseCode();
                         Log.d("ServerResponseCode","Server response code is "+rCode);
                         is = new BufferedInputStream(http.getInputStream());
-                        if(rCode == HttpURLConnection.HTTP_OK) ls = decrypt ? decryptedInputStream(is) : readIt(is);
+                        if(rCode == HttpURLConnection.HTTP_OK) ls = readIt(is);
                         http.disconnect();
                     }
                     return ls;
@@ -413,14 +411,12 @@ public class Network
                     u;
             private String
                     filename;
-            private boolean
-                    decrypt;
             private String[]
                     s;
             private byte[]
                     bytes;
 
-            public multiPart(String url, File file, String fileName, String[] strings, boolean decryptResponse, XADCallback callback)
+            public multiPart(String url, File file, String fileName, String[] strings, XADCallback callback)
             {
                 try
                 {
@@ -454,7 +450,6 @@ public class Network
                 cb = callback;
                 s = strings;
                 filename = fileName;
-                decrypt = decryptResponse;
                 execute();
             }
 
@@ -518,7 +513,7 @@ public class Network
                         is = new BufferedInputStream(https.getInputStream());
                         int rCode = https.getResponseCode();
                         Log.d("ServerResponseCode","Server response code is "+rCode);
-                        if(rCode == HttpsURLConnection.HTTP_OK) ls = decrypt ? decryptedInputStream(is) : readIt(is);
+                        if(rCode == HttpsURLConnection.HTTP_OK) ls = readIt(is);
                         https.disconnect();
                     }
                     else
@@ -543,7 +538,7 @@ public class Network
                         is = new BufferedInputStream(http.getInputStream());
                         int rCode = http.getResponseCode();
                         Log.d("ServerResponseCode","Server response code is "+rCode);
-                        if(rCode == HttpsURLConnection.HTTP_OK) ls = decrypt ? decryptedInputStream(is) : readIt(is);
+                        if(rCode == HttpsURLConnection.HTTP_OK) ls = readIt(is);
                         http.disconnect();
                     }
                     return ls;
