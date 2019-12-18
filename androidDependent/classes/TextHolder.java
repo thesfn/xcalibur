@@ -35,8 +35,9 @@ public final class TextHolder
                 Integer stringResource,
                 int constantViewTagIdentifier,
                 String identifier,
-                int constantViewTagTextSizeMultiplier,
-                int textSize,
+                int constantViewTagTextSizeMultiplier, 
+                int unit,
+                int textSize, 
                 float textSizeMultiplier,
                 int constantViewTagLanguage,
                 boolean isNew
@@ -63,7 +64,7 @@ public final class TextHolder
             if(t.getParent() != null)((RelativeLayout) t.getParent()).removeView(t);
             t.setTag(constantViewTagLanguage,stringResource);
             t.setTag(constantViewTagTextSizeMultiplier, textSizeMultiplier);
-            t.setTextSize(textSize * textSizeMultiplier);
+            t.setTextSize(unit, textSize * textSizeMultiplier);
             t.setText(stringResource);
             tmp = null;
             return t;
@@ -80,7 +81,8 @@ public final class TextHolder
                 int constantViewTagIdentifier,
                 String identifier,
                 int constantViewTagTextSizeMultiplier,
-                int textSize,
+                int unit,
+                int textSize, 
                 float textSizeMultiplier,
                 int constantViewTagLanguage,
                 boolean isNew
@@ -125,7 +127,7 @@ public final class TextHolder
             }
             t.setTag(constantViewTagTextSizeMultiplier, textSizeMultiplier);
             t.setTag(constantViewTagLanguage,text);
-            t.setTextSize(textSize * textSizeMultiplier);
+            t.setTextSize(unit, textSize * textSizeMultiplier);
             t.setText(text);
             tmp = null;
             return t;
@@ -141,7 +143,8 @@ public final class TextHolder
                 Integer stringResource,
                 int constantViewTagIdentifier,
                 String identifier,
-                int constantViewTagTextSizeMultiplier,
+                int constantViewTagTextSizeMultiplier, 
+                int unit,
                 int textSize,
                 float textSizeMultiplier,
                 int constantViewTagLanguage,
@@ -172,7 +175,7 @@ public final class TextHolder
             t.setTag(constantViewTagLanguage,stringResource);
             t.setTag(constantViewTagTextSizeMultiplier, textSizeMultiplier);
             t.setTag(constantViewTagUpperCasePosititon, uppercasePosition);
-            t.setTextSize(textSize * textSizeMultiplier);
+            t.setTextSize(unit, textSize * textSizeMultiplier);
             t.setText(StringHandler.uppercase(c.getResources().getString(stringResource),uppercasePosition));
             tmp = null;
             return t;
@@ -191,7 +194,8 @@ public final class TextHolder
                 Integer stringResource,
                 int constantViewTagIdentifier,
                 String identifier,
-                int constantViewTagTextSizeMultiplier,
+                int constantViewTagTextSizeMultiplier, 
+                int unit,
                 int textSize,
                 float textSizeMultiplier,
                 int constantViewTagLanguage,
@@ -219,7 +223,7 @@ public final class TextHolder
             if(e.getParent() != null)((RelativeLayout) e.getParent()).removeView(e);
             e.setTag(constantViewTagTextSizeMultiplier, textSizeMultiplier);
             e.setTag(constantViewTagLanguage, stringResource);
-            e.setTextSize(textSize * textSizeMultiplier);
+            e.setTextSize(unit, textSize * textSizeMultiplier);
             e.setText(stringResource);
             return e;
         }
@@ -234,7 +238,8 @@ public final class TextHolder
                 String stringResource,
                 int constantViewTagIdentifier,
                 String identifier,
-                int constantViewTagTextSizeMultiplier,
+                int constantViewTagTextSizeMultiplier, 
+                int unit,
                 int textSize,
                 float textSizeMultiplier,
                 int constantViewTagLanguage,
@@ -262,7 +267,7 @@ public final class TextHolder
             if(e.getParent() != null)((RelativeLayout) e.getParent()).removeView(e);
             e.setTag(constantViewTagTextSizeMultiplier, textSizeMultiplier);
             e.setTag(constantViewTagLanguage, stringResource);
-            e.setTextSize(textSize * textSizeMultiplier);
+            e.setTextSize(unit, textSize * textSizeMultiplier);
             e.setText(stringResource == null || stringResource.isEmpty() ? "" : stringResource);
             return e;
         }
@@ -278,7 +283,8 @@ public final class TextHolder
             Integer stringResource,
             int constantViewTagIdentifier,
             String identifier,
-            int constantViewTagTextSizeMultiplier,
+            int constantViewTagTextSizeMultiplier, 
+            int unit,
             int textSize,
             float textSizeMultiplier,
             int constantViewTagLanguage
@@ -302,7 +308,7 @@ public final class TextHolder
         if(b.getParent() != null)((RelativeLayout) b.getParent()).removeView(b);
         b.setTag(constantViewTagTextSizeMultiplier, textSizeMultiplier);
         b.setTag(constantViewTagLanguage,stringResource);
-        b.setTextSize(textSize * textSizeMultiplier);
+        b.setTextSize(unit, textSize * textSizeMultiplier);
         if(stringResource != null) b.setText(stringResource);
         return b;
     }
