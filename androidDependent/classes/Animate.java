@@ -69,8 +69,17 @@ public class Animate
 
     public void execute()
     {
-        n = 0;
-        if(activity != null  && view != null && multiplier > 0 && speed > 0) (threader = new threader()).animate.start();
+        view.post(
+            new Runnable()
+            {
+                @Overide
+                public void run()
+                {
+                    n = 0;
+                    if(activity != null  && view != null && multiplier > 0 && speed > 0) (threader = new threader()).animate.start();
+                }
+            }
+        );
     }
 
     private boolean infiniteLoop()
