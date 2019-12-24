@@ -28,22 +28,22 @@ public final class GuiPart
 {
 
     public final static String
-            SCROLL_VIEW = "scrollView",
-            LIST_VIEW = "listView",
-            GRID_VIEW = "gridView",
-            FRAME_LAYOUT = "frameLayout",
-            RELATIVE_LAYOUT = "relativeLayout",
-            TEXT_VIEW = "textView",
-            IMAGE_VIEW = "imageView",
-            EDIT_TEXT = "editText",
-            BUTTON = "button",
-            PROGRESS_BAR = "progressBar",
-            HORIZONTAL_SCROLL_VIEW = "horizontalScrollView",
-            HORIZONTAL_VIEW = "horizontalView",
-            SCALABLE_VIEW = "scalableView";
+            SCROLL_VIEW = 0,
+            LIST_VIEW = 1,
+            GRID_VIEW = 2,
+            FRAME_LAYOUT = 3,
+            RELATIVE_LAYOUT = 4,
+            TEXT_VIEW = 5,
+            IMAGE_VIEW = 6,
+            EDIT_TEXT = 7,
+            BUTTON = 8,
+            PROGRESS_BAR = 9,
+            HORIZONTAL_SCROLL_VIEW = 10,
+            HORIZONTAL_VIEW = 11,
+            SCALABLE_VIEW = 12;
     public final static int
             FRAMELAYOUT_PARAM = 0,
-            RELATIVE_PARAM = 1,
+            RELATIVELAYOUT_PARAM = 1,
             GRIDVIEW_PARAM = 2,
             LISTVIEW_PARAM = 3,
             SCROLLVIEW_PARAM = 4,
