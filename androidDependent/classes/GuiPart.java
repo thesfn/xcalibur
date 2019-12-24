@@ -52,7 +52,7 @@ public final class GuiPart
 
     public static View create(
             Context cntx,
-            String viewRequest,
+            int viewRequest,
             Integer paramType,
             Integer widthParameter,
             Integer heightParameter,
