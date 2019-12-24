@@ -27,7 +27,7 @@ import xcalibur.androidDependent.interfaces.XADCallback;
 public final class GuiPart
 {
 
-    public final static String
+    public final static int
             SCROLL_VIEW = 0,
             LIST_VIEW = 1,
             GRID_VIEW = 2,
