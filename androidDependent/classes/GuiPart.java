@@ -78,7 +78,7 @@ public final class GuiPart
                     if(margin != null)fp.setMargins(margin[0],margin[1],margin[2],margin[3]);
                     if(gravity != null) fp.gravity = gravity;
                     break;
-                case RELATIVE_PARAM:
+                case RELATIVELAYOUT_PARAM:
                     rp = new RelativeLayout.LayoutParams(widthParameter, heightParameter);
                     if(margin != null)rp.setMargins(margin[0],margin[1],margin[2],margin[3]);
                     break;
