@@ -1,7 +1,5 @@
 package xcalibur.javaNative.classes;
 
-import android.support.annotation.NonNull;
-
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
