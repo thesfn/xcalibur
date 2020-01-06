@@ -57,7 +57,7 @@ public final class TextHolder
             }
             if(t == null)
             {
-                t = (TextView) GuiPart.create(c, GuiPart.TEXT_VIEW, GuiPart.RELATIVE_PARAM,width,height,null,margin,rule,clickable);
+                t = (TextView) GuiPart.create(c, GuiPart.TEXT_VIEW, GuiPart.RELATIVELAYOUT_PARAM,width,height,null,margin,rule,clickable);
                 t.setTag(constantViewTagIdentifier,identifier);
                 txtVw.add(t);
             }
@@ -102,7 +102,7 @@ public final class TextHolder
             }
             if(t == null)
             {
-                t = (TextView) GuiPart.create(c, GuiPart.TEXT_VIEW, GuiPart.RELATIVE_PARAM,width,height,null,margin,rule,clickable);
+                t = (TextView) GuiPart.create(c, GuiPart.TEXT_VIEW, GuiPart.RELATIVELAYOUT_PARAM,width,height,null,margin,rule,clickable);
                 t.setTag(constantViewTagIdentifier,identifier);
                 txtVw.add(t);
             }
@@ -167,7 +167,7 @@ public final class TextHolder
             }
             if(t == null)
             {
-                t = (TextView) GuiPart.create(c, GuiPart.TEXT_VIEW, GuiPart.RELATIVE_PARAM,width,height,null,margin,rule,clickable);
+                t = (TextView) GuiPart.create(c, GuiPart.TEXT_VIEW, GuiPart.RELATIVELAYOUT_PARAM,width,height,null,margin,rule,clickable);
                 t.setTag(constantViewTagIdentifier,identifier);
                 txtVw.add(t);
             }
@@ -216,7 +216,7 @@ public final class TextHolder
             }
             if(e == null)
             {
-                e = (EditText) GuiPart.create(c, GuiPart.EDIT_TEXT, GuiPart.RELATIVE_PARAM,width,height,null,margin,rule,clickable);
+                e = (EditText) GuiPart.create(c, GuiPart.EDIT_TEXT, GuiPart.RELATIVELAYOUT_PARAM,width,height,null,margin,rule,clickable);
                 e.setTag(constantViewTagIdentifier,identifier);
                 edtTxt.add(e);
             }
@@ -260,7 +260,7 @@ public final class TextHolder
             }
             if(e == null)
             {
-                e = (EditText) GuiPart.create(c, GuiPart.EDIT_TEXT, GuiPart.RELATIVE_PARAM,width,height,null,margin,rule,clickable);
+                e = (EditText) GuiPart.create(c, GuiPart.EDIT_TEXT, GuiPart.RELATIVELAYOUT_PARAM,width,height,null,margin,rule,clickable);
                 e.setTag(constantViewTagIdentifier,identifier);
                 edtTxt.add(e);
             }
@@ -301,7 +301,7 @@ public final class TextHolder
         }
         if(b == null)
         {
-            b = (Button) GuiPart.create(c, GuiPart.BUTTON, GuiPart.RELATIVE_PARAM,width,height,null,margin,rule,clickable);
+            b = (Button) GuiPart.create(c, GuiPart.BUTTON, GuiPart.RELATIVELAYOUT_PARAM,width,height,null,margin,rule,clickable);
             b.setTag(constantViewTagIdentifier, identifier);
             bttn.add(b);
         }
