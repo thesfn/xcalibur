@@ -2,6 +2,7 @@ package xcalibur.androidDependent.classes;
 
 import android.app.Activity;
 import android.graphics.Bitmap;
+import android.util.Log;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ListView;
@@ -72,7 +73,7 @@ public class Animate
         view.post(
             new Runnable()
             {
-                @Overide
+                @Override
                 public void run()
                 {
                     n = 0;
@@ -251,7 +252,7 @@ public class Animate
         }
         catch (InterruptedException e)
         {
-           Log.e("InterruptedException","InterruptedException @ animate.handler");*/
+           Log.e("InterruptedException","InterruptedException @ animate.handler");
         }
     }
 
