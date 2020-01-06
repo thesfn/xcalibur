@@ -322,7 +322,7 @@ public class XJNUtilities
         return height;
     }
 
-    public static int[] addToArray(@NonNull int[] array, int intToAdd)
+    public static int[] addToArray(int[] array, int intToAdd)
     {
         int[]
                 tmp = new int[array.length + 1];
@@ -331,7 +331,7 @@ public class XJNUtilities
         return tmp;
     }
 
-    public static String[] addToArray(@NonNull String[] array, String stringToAdd)
+    public static String[] addToArray(String[] array, String stringToAdd)
     {
         String[]
                 tmp = new String[array.length + 1];
@@ -340,7 +340,7 @@ public class XJNUtilities
         return tmp;
     }
 
-    public static int[] removeFromArray(@NonNull int[] array, int intToRemove)
+    public static int[] removeFromArray(int[] array, int intToRemove)
     {
         int n = 0;
         int[] tmp = new int[array.length - 1];
@@ -355,7 +355,7 @@ public class XJNUtilities
         return tmp;
     }
 
-    public static String[] removeFromArray(@NonNull String[] array, int positionToRemove)
+    public static String[] removeFromArray(String[] array, int positionToRemove)
     {
         int
                 n = 0;
