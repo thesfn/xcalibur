@@ -304,16 +304,14 @@ public class XJNUtilities
 
     public static long dateToLong(int year, int month, int day)
     {
-        return Integer.valueOf(
-                String.valueOf(year) +
-                        (month < 10 ? "0"+month : String.valueOf(month)) +
-                        (day < 10 ? "0"+day : String.valueOf(day))
-        );
+        return Integer.valueOf(year + (month < 10 ? "0"+month : String.valueOf(month)) + (day < 10 ? "0"+day : String.valueOf(day)));
     }
 
     public static int getLayoutHeightBasedOnString(String string , int maxWidth, int textSize)
     {
-        int height = 0, tmp;
+        int
+                height = 0,
+                tmp;
         if(string != null && (tmp = string.length() * textSize) > maxWidth)
         {
             tmp = tmp / maxWidth;
@@ -326,7 +324,7 @@ public class XJNUtilities
     {
         int[]
                 tmp = new int[array.length + 1];
-        for(int i= 0; i < array.length; i++) tmp[i] = array[i];
+        System.arraycopy(array, 0, tmp, 0, array.length);
         tmp[tmp.length - 1] = intToAdd;
         return tmp;
     }
@@ -335,7 +333,7 @@ public class XJNUtilities
     {
         String[]
                 tmp = new String[array.length + 1];
-        for(int i= 0; i < array.length; i++) tmp[i] = array[i];
+        System.arraycopy(array, 0, tmp, 0, array.length);
         tmp[tmp.length - 1] = stringToAdd;
         return tmp;
     }
