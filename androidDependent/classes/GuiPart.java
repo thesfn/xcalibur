@@ -1,5 +1,6 @@
 package xcalibur.androidDependent.classes;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import android.app.Activity;
@@ -350,5 +351,46 @@ public final class GuiPart
         @Override
         public void send(View cb)
         { }
+    }
+
+    public final class Package
+    {
+        public int
+                type,
+                parameterType,
+                width,
+                height;
+        public int[]
+                margin;
+        public boolean
+                clickable;
+        public Integer
+                gravity;
+        public ArrayList<int[]>
+                rules;
+
+        public Package()
+        { }
+
+        public Package(
+                int viewType,
+                int viewParameterType,
+                int viewWidth,
+                int viewHeight,
+                Integer viewGravity,
+                int[] viewMargin,
+                ArrayList<int[]> viewRules,
+                boolean isViewClickable
+        )
+        {
+            type = viewType;
+            parameterType = viewParameterType;
+            width = viewWidth;
+            height = viewHeight;
+            gravity = viewGravity;
+            margin = viewMargin;
+            rules = viewRules;
+            clickable = isViewClickable;
+        }
     }
 }
