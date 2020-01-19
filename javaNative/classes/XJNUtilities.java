@@ -370,6 +370,15 @@ public class XJNUtilities
         return tmp;
     }
 
+    public static String[] combineArray(String[] array1, String[] array2)
+    {
+        String[]
+                rval = new String[array1.length + array2.length];
+        System.arraycopy(array1, 0, rval, 0, array1.length);
+        System.arraycopy(array2, 0, rval, array1.length, array2.length);
+        return rval;
+    }
+
     public static String splitAndJoint(String string, String tokenToRemove, String tokenToJoint, int[] positionsToIgnore)
     {
         if(string != null && !string.isEmpty())
