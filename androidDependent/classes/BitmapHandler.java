@@ -30,20 +30,23 @@ public final class BitmapHandler
         {
             str = uri;
             cb = callback;
-            decode.start();
-        }
-
-        private final Thread decode = new Thread()
-        {
-            @Override
-            public void run()
+            (new Thread()
             {
-                Bitmap btmp = null;
-                if(new File(str).exists()) btmp = BitmapFactory.decodeFile(str);
-                cb.send(btmp);
-                interrupt();
-            }
-        };
+                @Override
+                public void run()
+                {
+                    Bitmap
+                            btmp = null;
+                    if(new File(str).exists())
+                    {
+                        btmp = BitmapFactory.decodeFile(str);
+                        btmp = rotate(btmp, orientation(str));
+                    }
+                    cb.send(btmp);
+                    interrupt();
+                }
+            }).start();
+        }
     }
 
     private static int insampleSizeCalculator(BitmapFactory.Options opt, int wdth, int hght)
@@ -290,15 +293,16 @@ public final class BitmapHandler
             {
                 File
                         fl = new File(path);
-                if(fl.exists() && fl.isFile()) btmp = BitmapFactory.decodeFile(path);
+                if(fl.exists() && fl.isFile())
+                {
+                    btmp = BitmapFactory.decodeFile(path);
+                    btmp = rotate(btmp, ornt)
+                }
             }
             if(btmp != null)
             {
                 boolean
                         scle = true;
-                Matrix
-                        mtrx = new Matrix();
-                mtrx.setRotate(ornt);
                 if(bndngrto > 0)
                 {
                     float
@@ -331,7 +335,7 @@ public final class BitmapHandler
                         }
                     }
                 }
-                if(srcwdth > 0 && srchght > 0) btmp = Bitmap.createBitmap(btmp, x, y, srcwdth, srchght, mtrx, false);
+                if(srcwdth > 0 && srchght > 0) btmp = Bitmap.createBitmap(btmp, x, y, srcwdth, srchght, null, false);
                 if(cntr && btmp.getWidth() != btmp.getHeight())
                 {
                     int
@@ -351,7 +355,7 @@ public final class BitmapHandler
                         x = (int)(cx - (cwh / ((float)2)));
                         y = (int)(cy - (cwh / ((float)2)));
                     }
-                    btmp = Bitmap.createBitmap(btmp, x, y, cwh, cwh, mtrx, true);
+                    btmp = Bitmap.createBitmap(btmp, x, y, cwh, cwh, null, true);
                 }
                 if(lmt)
                 {
